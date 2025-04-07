@@ -1,10 +1,11 @@
 Here is a list of TODOs for Immigration law assistant DSCI 560 Project
 ### Todo
 - [ ] Create a OpenAI/Deepseek free account
-- [ ] Work on technology stack diagram
+
 
 ### In Progress
-- [ ] Create a Google Cloud Platform free account
+- [ ] Create a Google Cloud Platform free account - Shubham
+- [ ] Work on technology stack diagram - Shubham
 
 ### Done ✓
 - [x] Create a TODO.md  
