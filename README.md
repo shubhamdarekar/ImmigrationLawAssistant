@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Immigration Law Assistant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive AI-powered platform designed to simplify the U.S. immigration process by providing personalized guidance, form assistance, and connecting users with relevant resources.
 
-## Available Scripts
+## 🌟 Overview
 
-In the project directory, you can run:
+Immigration Law Assistant helps individuals navigate the complex U.S. immigration system through an intuitive, AI-driven interface. The platform offers personalized guidance based on a user's specific situation, immigration status, and goals, making the process more accessible and less intimidating.
 
-### `npm start`
+## ✨ Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🤖 AI Chatbot
+- **Smart Assistance**: Answers common immigration questions with up-to-date information
+- **Flexible Interaction**: Offers both guided conversations (for structured help) and open-ended queries
+- **Contextual Intelligence**: Detects question categories and suggests relevant follow-up actions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🗺️ Personalized Process Navigation
+- **Custom Guidance**: Creates tailored guidance based on user profile and current progress
+- **Immigration Roadmap**: Generates visual step-by-step pathways to legal status
+- **Progress Tracking**: Helps users monitor completion of required steps and documents
 
-### `npm test`
+### 📝 Form Assistance
+- **Term Explanation**: Clarifies legal and professional terminology
+- **Field Guidance**: Explains what information each form field requires
+- **Multilingual Support**: Provides translations to assist non-English speakers
+- **Privacy-First Design**: No autofill functionality or data storage of sensitive information
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 👥 User Experience Mining
+- **Community Insights**: Aggregates real stories and experiences from Reddit and immigration forums
+- **Practical Wisdom**: Highlights common challenges, mistakes, and helpful tips from others who've gone through the process
 
-### `npm run build`
+### 🏢 Resource Connection
+- **Nearby Offices**: Recommends relevant government offices based on user location
+- **Agency Directory**: Provides information for USCIS, ICE/CBP, and legal aid organizations
+- **Legal Support**: Lists immigration lawyers with contact details and brief professional biographies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Cloud Infrastructure
+- **Google Cloud Platform (GCP)**: Cloud functions for serverless deployment
+- **Database Solutions**: Pinecone DB for vector embeddings, PostgreSQL for structured data storage
+- **LLM Integration**: Azure OpenAI for natural language processing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Development & Operations
+- **Version Control**: GitHub for code management
+- **CI/CD**: GitHub Actions for continuous integration and deployment
+- **Data Pipeline**: Airflow for orchestrating data workflows
+- **API Layer**: FastAPI for high-performance API endpoints
 
-### `npm run eject`
+## 🚀 Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
+- Node.js (v14 or higher)
+- Python 3.8+ (for backend services)
+- GCP account
+- Azure account (for OpenAI integration)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Frontend
+```bash
+# Navigate to frontend directory
+cd frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install dependencies
+npm install
 
-## Learn More
+# Start development server
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Backend (if applicable)
+```bash
+# Navigate to backend directory
+cd backend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Set up virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-### Code Splitting
+# Install dependencies
+pip install -r requirements.txt
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Start backend server
+python main.py
+```
 
-### Analyzing the Bundle Size
+## 📊 Project Structure
+```
+ImmigrationLawAssistant/
+|— README.md               # Project documentation
+|— LICENSE                 # License information
+|— frontend/               # Frontend application
+|     |— package.json      # Node.js dependencies
+|     |— src/              # Source code
+|     |— public/           # Static assets
+|— backend/                # Backend services (if applicable)
+      |— main.py           # Entry point
+      |— utils.py          # Utility functions
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contributing
 
-### Making a Progressive Web App
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### Advanced Configuration
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Deployment
+## 🙏 Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [USCIS](https://www.uscis.gov/) for providing immigration information
+- Open source communities for tools and libraries used in this project
