@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 
 const VerticalImmigrationMap = () => {
-  // State to track selected category and path
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [selectedPath, setSelectedPath] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
   
-  // Category data structure
   const categories = [
     {
       id: 'family',
@@ -193,7 +191,6 @@ const VerticalImmigrationMap = () => {
     }
   ];
   
-  // Form descriptions for details panel
   const formDescriptions = {
     'I-130': 'Petition for Alien Relative - Used to establish relationship to a U.S. citizen or permanent resident',
     'I-140': 'Immigrant Petition for Alien Worker - Filed by an employer',
@@ -210,7 +207,6 @@ const VerticalImmigrationMap = () => {
     'PERM/ETA 9089': 'Permanent Labor Certification Application - First step for EB-2 and EB-3 categories'
   };
   
-  // Path details for display
   const pathDetails = {
     'spouse': {
       title: 'Spouse of a U.S. Citizen',
@@ -252,19 +248,15 @@ const VerticalImmigrationMap = () => {
       ],
       notes: 'VAWA petitions are confidential and the abuser will not be notified. Petitioners may be eligible for work authorization and certain benefits.'
     },
-    // More path details can be added as needed
   };
   
-  // Select a category
   const selectCategory = (categoryId) => {
     if (selectedCategory === categoryId) {
-      // If clicking the same category, collapse it
       setSelectedCategory(null);
       setSelectedSubcategory(null);
       setSelectedPath(null);
       setShowDetails(false);
     } else {
-      // Select new category and reset others
       setSelectedCategory(categoryId);
       setSelectedSubcategory(null);
       setSelectedPath(null);
@@ -272,22 +264,18 @@ const VerticalImmigrationMap = () => {
     }
   };
   
-  // Select a subcategory
   const selectSubcategory = (subcategoryId) => {
     if (selectedSubcategory === subcategoryId) {
-      // If clicking the same subcategory, collapse it
       setSelectedSubcategory(null);
       setSelectedPath(null);
       setShowDetails(false);
     } else {
-      // Select new subcategory
       setSelectedSubcategory(subcategoryId);
       setSelectedPath(null);
       setShowDetails(false);
     }
   };
   
-  // Select a path
   const selectPath = (category, subcategory, path) => {
     setSelectedPath({
       categoryId: category.id,
@@ -309,19 +297,15 @@ const VerticalImmigrationMap = () => {
       </div>
       
       <div className="flex flex-col lg:flex-row gap-4">
-        {/* Left side - Vertical Navigation */}
         <div className="w-full lg:w-2/3 bg-white rounded-lg shadow-md">
           <div className="p-4 border-b border-gray-200">
             <h2 className="text-xl font-bold text-blue-700">Green Card Eligibility Categories</h2>
             <p className="text-sm text-gray-600">Select a category to explore pathways</p>
           </div>
           
-          {/* Main Category Grid */}
           <div className="grid grid-cols-1 gap-4 p-4">
-            {/* Categories */}
             {categories.map((category) => (
               <div key={category.id} className="w-full">
-                {/* Category header */}
                 <div 
                   className={`p-4 rounded-lg cursor-pointer transition-colors flex justify-between items-center ${selectedCategory === category.id ? 'bg-gray-100' : 'hover:bg-gray-50'}`}
                   style={{ borderLeft: `4px solid ${category.color}` }}
@@ -336,12 +320,10 @@ const VerticalImmigrationMap = () => {
                   </div>
                 </div>
                 
-                {/* Subcategories (shown when category is selected) */}
                 {selectedCategory === category.id && (
                   <div className="pl-4 mt-2 border-l-2 border-gray-200 ml-4">
                     {category.subcategories.map((subcategory) => (
                       <div key={subcategory.id} className="mb-2">
-                        {/* Subcategory header */}
                         <div 
                           className={`p-3 rounded cursor-pointer transition-colors flex justify-between items-center ${selectedSubcategory === subcategory.id ? 'bg-gray-100' : 'hover:bg-gray-50'}`}
                           onClick={() => selectSubcategory(subcategory.id)}
@@ -357,7 +339,6 @@ const VerticalImmigrationMap = () => {
                           </div>
                         </div>
                         
-                        {/* Paths (shown when subcategory is selected) */}
                         {selectedSubcategory === subcategory.id && (
                           <div className="pl-4 border-l-2 border-gray-100 ml-2">
                             {subcategory.paths.map((path) => (
@@ -380,7 +361,6 @@ const VerticalImmigrationMap = () => {
           </div>
         </div>
         
-        {/* Right side - Details Panel */}
         <div className="w-full lg:w-1/3">
           {showDetails && selectedPath ? (
             <div className="bg-white p-4 rounded-lg shadow-md">
@@ -396,7 +376,6 @@ const VerticalImmigrationMap = () => {
                 </span>
               </div>
               
-              {/* Path details */}
               {pathDetails[selectedPath.pathId] ? (
                 <div className="space-y-4">
                   <div>
@@ -436,7 +415,6 @@ const VerticalImmigrationMap = () => {
                 </div>
               )}
               
-              {/* Required forms */}
               <div className="mt-4">
                 <h3 className="font-bold text-gray-700">Required Forms</h3>
                 <div className="space-y-2 mt-2">
@@ -463,7 +441,6 @@ const VerticalImmigrationMap = () => {
             </div>
           )}
           
-          {/* Quick guide */}
           <div className="bg-white p-4 rounded-lg shadow-md mt-4">
             <h3 className="font-bold text-gray-700 mb-2">Immigration Resources</h3>
             <div className="space-y-2 text-sm">
