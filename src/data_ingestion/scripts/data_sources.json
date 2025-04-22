@@ -1,0 +1,18 @@
+{
+    "uscis_pdf": {
+      "raw": "../data/raw/uscis_pdf",
+      "structured": "../data/structured/uscis_pdf",
+      "add_tags": true
+    },
+    "uscis_html": {
+      "raw": "../data/raw/uscis_html",
+      "structured": "../data/structured/uscis_html",
+      "add_tags": true
+    },
+    "reddit_post": {
+      "raw": "../data/raw/reddit_post",
+      "structured": "../data/structured/reddit_post",
+      "add_tags": true
+    }
+  }
+  
