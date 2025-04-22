@@ -1,0 +1,38 @@
+name: Deploy to Google Cloud Functions
+
+on:
+  push:
+    branches:
+      - shubham/initialize-Codebase
+  workflow_dispatch:
+    
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: shubham/initialize-Codebase
+
+      # Step 2: Authenticate with Google Cloud using the service account key from secrets
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}'
+
+      # Step 3: Deploy the Cloud Function
+      - name: Deploy to Cloud Functions
+        uses: google-github-actions/deploy-cloud-functions@v2
+        with:
+          name: flask-app
+          runtime: python310
+          entry_point: main
+          region: us-central1
+          source_dir: .
+          memory_mb: 8192
+          env_vars: |
+            abc=123
+          
