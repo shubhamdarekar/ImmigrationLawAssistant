@@ -32,7 +32,7 @@ jobs:
         uses: google-github-actions/deploy-cloud-functions@v3
         timeout-minutes: 20
         with:
-          name: teacherbot-data-pipeline
+          name: immigrationAssistant-data-pipeline
           runtime: python310
           entry_point: main
           region: us-east1
@@ -59,4 +59,4 @@ jobs:
             CHUNK_OVERLAP=${{ env.CHUNK_OVERLAP }}
 
       - name: Confirm Deployment
-        run: echo "Cloud Function 'teacherbot-data-pipeline' deployed successfully!"
+        run: echo "Cloud Function 'immigrationAssistant-data-pipeline' deployed successfully!"
