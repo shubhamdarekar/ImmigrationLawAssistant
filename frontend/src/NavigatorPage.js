@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const InteractiveImmigrationMap = () => {
+const NavigatorPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [selectedPath, setSelectedPath] = useState(null);
@@ -870,7 +870,7 @@ const InteractiveImmigrationMap = () => {
   return (
     <div className="flex flex-col w-full max-w-6xl mx-auto p-4">
       <div className="p-4 mb-4 bg-blue-700 text-white rounded-lg shadow-md text-left">
-        <h1 className="text-2xl font-bold text-center">U.S. Green Card Pathways Navigator</h1>
+        <h1 className="text-2xl font-bold text-center">Navigator</h1>
         <p className="text-center">Click on categories to explore different immigration paths</p>
       </div>
       
@@ -1043,4 +1043,4 @@ const InteractiveImmigrationMap = () => {
   );
 };
 
-export default InteractiveImmigrationMap;
+export default NavigatorPage;
