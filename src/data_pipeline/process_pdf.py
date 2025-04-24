@@ -200,17 +200,34 @@ def process_pdf_and_upload(bucket_name: str, file_name: str, chunk_size: int, ch
         bucket = client.get_bucket(bucket_name)
         blob = bucket.blob(file_name)
         pdf_data: bytes = blob.download_as_bytes()
-
-        layout_data: List[BlockData] = extract_text_and_layout_from_pdf(pdf_data)
-
-        # Convert Pydantic models to dictionaries for further processing
-        layout_dict_data = [block.dict() for block in layout_data]
+        print(f"Downloaded {file_name} from GCS bucket {bucket_name}")
         
-        # Generate chunks and metadata
-        _, metadata = generate_chunks(layout_dict_data, chunk_size, file_name, chunk_overlap)
+        if ".pdf" in file_name:
 
+            layout_data: List[BlockData] = extract_text_and_layout_from_pdf(pdf_data)
+
+            # Convert Pydantic models to dictionaries for further processing
+            layout_dict_data = [block.dict() for block in layout_data]
+        
+            # Generate chunks and metadata
+            _, metadata = generate_chunks(layout_dict_data, chunk_size, file_name, chunk_overlap)
+        else:
+            metadata: Dict[str, Any] = {
+                                'document_name': file_name,
+                                'page': 1,
+                                'chunk_index': 1,
+                                # 'start_token_index': 0,
+                                # 'end_token_index': 0,
+                                # 'parent': parent,
+                                # 'id': item_id,
+                                'raw_text': pdf_data.decode('utf-8', errors='ignore'),  # Decode bytes to string
+                                'children': []  # Placeholder for children, if any
+                            }
+            metadata = [metadata]  # Wrap in a list to match expected input format
+        # print(f"Extracted metadata: {metadata}")
         # Generate embeddings from metadata
         embedding_vectors = generate_embedding_vector(metadata=metadata, model=model)
+        
 
         # Initialize and upload to Pinecone vector database
         index = initialize_pinecone()
@@ -262,7 +279,7 @@ def main(bucket_name=None, file_name=None, chunk_size=None, chunk_overlap=None, 
     bucket_name = os.getenv('BUCKET_NAME', '')
     client = storage.Client()
     bucket = client.get_bucket(bucket_name)
-    blobs = bucket.list_blobs(prefix="source_pdf_data/")
+    blobs = bucket.list_blobs(prefix="structured_data/")
 
     ## TODO: Use the given parameters to pass here to the process_pdf_and_upload function
 
