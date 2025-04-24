@@ -17,3 +17,6 @@ yarn-error.log*
 # Ignore all generated USCIS PDFs
 src/data_ingestion/data/**/*.json
 
+lawassistant-456116-64f95f793bc2.json
+
+frontend/public/560_FinalProj_TitleVideo.mp4
