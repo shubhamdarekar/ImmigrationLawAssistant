@@ -24,9 +24,7 @@ jobs:
       - name: Authenticate to Google Cloud (WIF)
         uses: google-github-actions/auth@v2
         with:
-          token_format: 'access_token'
-          workload_identity_provider: '${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}'
-          service_account: '${{ secrets.SERVICE_ACCOUNT }}'
+          credentials_json: '${{ secrets.GCP_CREDENTIALS_ESCAPED  }}'
 
       - name: Deploy to Cloud Functions
         uses: google-github-actions/deploy-cloud-functions@v3
