@@ -219,7 +219,7 @@ def process_pdf_and_upload(bucket_name: str, file_name: str, chunk_size: int, ch
                                 # 'start_token_index': 0,
                                 # 'end_token_index': 0,
                                 # 'parent': parent,
-                                # 'id': item_id,
+                                'id': 1,
                                 'raw_text': pdf_data.decode('utf-8', errors='ignore'),  # Decode bytes to string
                                 'children': []  # Placeholder for children, if any
                             }
