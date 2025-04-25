@@ -1,2 +1,29 @@
+# Node.js / Frontend Standard
+node_modules/
+dist/
+build/
 .env
+.DS_Store
 
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE related
+.vscode/
+.idea/
+*.swp
+# Ignore all generated USCIS PDFs
+src/data_ingestion/data/**/*.json
+
+lawassistant-456116-64f95f793bc2.json
+
+frontend/public/560_FinalProj_TitleVideo.mp4
+.venv/*
+.vscode/settings.json
+*/__pycache__/*
+*.json
+.env
+*.pyc
+*/__pycache__/*
