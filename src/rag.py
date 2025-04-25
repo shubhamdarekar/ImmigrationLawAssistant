@@ -1,3 +1,4 @@
+import fitz
 from dotenv import load_dotenv
 import os
 import openai
@@ -19,6 +20,7 @@ chat_deployment = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")
 # Pinecone setup 
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 index = pc.Index(os.getenv("PINECONE_INDEX_NAME"))
+
 
 #Embedding + Retrieval
 def get_relevant_context(query, top_k=5):
@@ -62,7 +64,7 @@ Answer:"""
     )
     return response.choices[0].message.content
 
-# Test full pipline
+# Test full pipeline
 if __name__ == "__main__":
     test_query = "Can I work on an F1 visa in the U.S.?"
     print("User question:", test_query)
