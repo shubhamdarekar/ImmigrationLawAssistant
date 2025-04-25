@@ -1,0 +1,1 @@
+SENTENCE_TRANSFORMER = 'sentence-transformers/all-minilm-l6-v2'
