@@ -1,0 +1,61 @@
+.lawyer-connection-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lawyer-card {
+    transition: all 0.2s ease-in-out;
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+
+.lawyer-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lawyer-list {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.ol-popup {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    min-width: 200px;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.popup-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.popup-info {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 4px;
+}
+
+.popup-phone {
+    color: #2563eb;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}

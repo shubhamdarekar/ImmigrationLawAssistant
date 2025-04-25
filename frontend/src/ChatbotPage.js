@@ -1,13 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, Send, User, FileText, Link, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const ChatbotPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { category, subcategory, pathway, forms } = location.state || {};
+  
+  const getInitialMessage = () => {
+    if (pathway) {
+      return `Hello! I'm your Immigration Law Assistant. I see you're interested in ${pathway} under the ${category} (${subcategory}) category. This pathway typically requires forms: ${forms.join(', ')}. How can I help you with this process?`;
+    }
+    return 'Hello! I am your Immigration Law Assistant. How can I help you today?';
+  };
+
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: 'Hello! I am your Immigration Law Assistant. How can I help you today?'
+      content: getInitialMessage()
     }
   ]);
   const [input, setInput] = useState('');

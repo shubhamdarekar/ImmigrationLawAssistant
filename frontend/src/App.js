@@ -4,6 +4,7 @@ import MainLayout from './components/MainLayout';
 import HomePage from './HomePage';
 import NavigatorPage from './NavigatorPage';
 import ChatbotPage from './ChatbotPage';
+import LawyerConnectionPage from './LawyerConnectionPage';
 import './App.css';
 
 const FormAssistantPage = () => (
@@ -18,17 +19,17 @@ const FormAssistantPage = () => (
   </div>
 );
 
-const LawyerConnectionPage = () => (
-  <div className="flex flex-col items-center pt-12 px-4">
-    <div className="rounded-full bg-blue-500 p-6 mb-4">
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-    </div>
-    <h2 className="text-3xl font-bold mb-4">Lawyer Connection</h2>
-    <p className="text-lg text-gray-600 text-center max-w-lg">
-      Connect with immigration lawyers for professional legal advice.
-    </p>
-  </div>
-);
+// const LawyerConnectionPage = () => (
+//   <div className="flex flex-col items-center pt-12 px-4">
+//     <div className="rounded-full bg-blue-500 p-6 mb-4">
+//       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+//     </div>
+//     <h2 className="text-3xl font-bold mb-4">Lawyer Connection</h2>
+//     <p className="text-lg text-gray-600 text-center max-w-lg">
+//       Connect with immigration lawyers for professional legal advice.
+//     </p>
+//   </div>
+// );
 
 function App() {
   return (
